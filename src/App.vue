@@ -61,7 +61,6 @@
             this.$modal.show(Modal, {
                 saveTruck(newTruck) {
                     tableData.push(newTruck);
-                    console.log(tableData)
                 }
             }, {
                 height: '500px',

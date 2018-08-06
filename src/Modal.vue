@@ -70,8 +70,6 @@ const dataObj = {
             actions: ''
         }
 
-for(let i in dataObj) console.log(typeof i);
-
  export default {
      data: function() {
         let data = Object.assign({}, dataObj);
