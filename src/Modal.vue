@@ -70,6 +70,8 @@ const dataObj = {
             actions: ''
         }
 
+for(let i in dataObj) console.log(typeof i);
+
  export default {
      data: function() {
         let data = Object.assign({}, dataObj);
@@ -79,22 +81,10 @@ const dataObj = {
      methods: {
         save(){
             let tempObj = Object.assign({}, dataObj)
-            
-            tempObj.callControl = this.callControl;
-            tempObj.read = this.read;
-            tempObj.soundAutoCall = this.soundAutoCall;
-            tempObj.truck = this.truck;
-            tempObj.origin = this.origin;
-            tempObj.destination = this.destination;
-            tempObj.pickup = this.pickup;
-            tempObj.dho = this.dho;
-            tempObj.dhd = this.dhd;
-            tempObj.fp = this.fp;
-            tempObj.length = this.length;
-            tempObj.weight = this.weight;
-            tempObj.trip = this.trip;
-            tempObj.alarm = this.alarm;
-            tempObj.actions = this.actions;
+        
+                for (let i in tempObj) {
+                    tempObj[i] = this[i];
+                }
 
             return tempObj;
      },
