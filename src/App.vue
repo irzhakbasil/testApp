@@ -3,6 +3,7 @@
         <div class="nav-container">
             <h3 class="vue-title">Post Trucks</h3>
             <button id="new-btn" @click = "addTruck">NEW</button>
+            <button id="play-btn" @click = "randomInput">PLAY</button>
             <button id="delete-btn" @click = "eraseTable">DELETE ALL</button>
         </div>
 
@@ -20,39 +21,26 @@
 
 <script>
     import Modal from './Modal'
+    import dataObj from './dataObj'
+    import tableHeadings from './tableHeadings'
+    import words from './words'
 
     let tableData = [];
     let getData = () => tableData;
 
     export default {
-      
+
       data: function () {
          return {
-            columns:['callControl', 'read', 'soundAutoCall', 'truck', 'origin', 'destination', 'pickup', 'dho', 'dhd', 'fp', 'length', 'weight', 'trip', 'alarm', 'actions'],
+            columns: Object.keys(dataObj),
             data: getData(),
             options: {
-            headings: {
-                callControl: 'Call Control',
-                read: 'Read',
-                soundAutoCall: 'Sound / Auto Call',
-                truck: 'Truck',
-                origin: 'Origin',
-                destination: 'Destination',
-                pickup: 'Pickup',
-                dho: 'DH-O',
-                dhd: 'DH-D',
-                fp: 'FP',
-                length: 'Length',
-                weight: 'Weight',
-                trip: 'Trip',
-                alarm: 'Alarm',
-                actions: 'Actions'
-            },
-            sortable: ['truck'],
-            filterable: false
+            headings: tableHeadings,
+            sortable: [''],
+            filterable: false,
             }
         }
-      },
+    },
       components: {
           Modal
       },
@@ -62,7 +50,7 @@
                 saveTruck(newTruck) {
                     tableData.push(newTruck);
                 }
-            }, {
+            },{
                 height: '500px',
                 width: '205px'
             });
@@ -70,6 +58,14 @@
           eraseTable() {
               tableData = [];
               this.data = getData();
+          },
+          randomInput(){
+              let tmpObj = Object.assign({}, dataObj);
+              for(let i in tmpObj) {
+                  let word = words[Math.floor(Math.random() * words.length)]
+                  tmpObj[i] = word;
+              }
+               tableData.push(tmpObj);
           }
       }
 }
@@ -85,6 +81,10 @@
 }
 #new-btn {
     background: rgb(136, 232, 143);
+    font-weight: bold;
+}
+#play-btn {
+    background: rgb(92, 172, 238);
     font-weight: bold;
 }
 #delete-btn {

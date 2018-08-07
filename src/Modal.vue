@@ -1,4 +1,4 @@
- <template>
+<template>
  <div class="container">
     <h3>New Truck Info</h3>
     <div>
@@ -52,23 +52,8 @@
 
  <script>
 
-const dataObj = {
-            callControl: '',
-            read: '',
-            soundAutoCall: '',
-            truck: '',
-            origin: '',
-            destination: '',
-            pickup: '',
-            dho: '',
-            dhd: '',
-            fp: '',
-            length: '',
-            weight: '',
-            trip: '',
-            alarm: '',
-            actions: ''
-        }
+ import dataObj from './dataObj'
+ import tableHeadings from './tableHeadings'
 
  export default {
      data: function() {
