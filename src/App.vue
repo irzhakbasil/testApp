@@ -72,6 +72,9 @@
 </script>
 
 <style>
+body {
+  background: rgb(161, 196, 252);   
+}
 #app {
   background: rgb(161, 196, 252);
   width: 95%;
