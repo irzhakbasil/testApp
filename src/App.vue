@@ -8,11 +8,9 @@
         </div>
 
         <div id="app">
-        <div class="container table">
-        <v-client-table :columns="columns" :data="data" :options="options">
-            
-        </v-client-table>
-        </div>
+            <div class="container table">
+                <v-client-table :columns="columns" :data="data" :options="options"></v-client-table>
+            </div>
         </div>
     <modals-container/>
     </div>
@@ -35,9 +33,9 @@
             columns: Object.keys(dataObj),
             data: getData(),
             options: {
-            headings: tableHeadings,
-            sortable: [''],
-            filterable: false,
+                headings: tableHeadings,
+                sortable: [''],
+                filterable: false,
             }
         }
     },
