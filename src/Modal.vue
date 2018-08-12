@@ -55,7 +55,7 @@
  }
  </script>
  
- <style>
+ <style scoped>
     #btn {
         margin-top: 5px;
     }

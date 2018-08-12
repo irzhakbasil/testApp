@@ -1,10 +1,23 @@
 <template>
     <div id='app'>
         <div class="nav-container">
-            <h3 class="vue-title">Post Trucks</h3>
-            <button id="new-btn" @click = "addTruck">NEW</button>
-            <button id="play-btn" @click = "randomInput">PLAY</button>
-            <button id="delete-btn" @click = "eraseTable">DELETE ALL</button>
+
+            <h3 id="heading" class="vue-title">Post Trucks</h3>
+
+            <a href="" @click = "randomInput" id="play-btn">
+                <img src="./play.png" height="45" width="45"/>
+            </a>
+
+            <a href="" @click = "addTruck" id="new-btn">
+                <img id="img" src="./add.png" height="32" width="32"/>
+            New
+            </a>
+
+             <a href="" @click = "eraseTable" id="delete-btn">
+                <img src="./delete.png" height="32" width="32"/>
+            Delete All
+            </a>
+
         </div>
 
         <div id="app">
@@ -43,21 +56,24 @@
           Modal
       },
       methods: {
-          addTruck() {
+          addTruck(e) {
+            e.preventDefault()
             this.$modal.show(Modal, {
                 saveTruck(newTruck) {
                     tableData.push(newTruck);
                 }
             },{
                 height: '500px',
-                width: '205px'
+                width: '205px',
             });
           },
-          eraseTable() {
+          eraseTable(e) {
+              e.preventDefault()
               tableData = [];
               this.data = getData();
           },
-          randomInput(){
+          randomInput(e){
+              e.preventDefault() 
               let tmpObj = Object.assign({}, dataObj);
               for(let i in tmpObj) {
                   let word = words[Math.floor(Math.random() * words.length)]
@@ -71,29 +87,36 @@
 
 <style>
 body {
-  background: rgb(161, 196, 252);   
+  background: #c6dbec;   
+}
+#heading {
+    margin-bottom: 25px;
+    font-size: 30px;
 }
 #app {
-  background: rgb(161, 196, 252);
+  background:#c6dbec;
   width: 95%;
   height: 95%;
   margin: 0 auto;
   padding-top: 10px;
 }
 #new-btn {
-    background: rgb(136, 232, 143);
-    font-weight: bold;
+    text-decoration: none;
+    margin-right: 15px;
+    color: #243447;
+    font-size: 23px;
 }
 #play-btn {
-    background: rgb(92, 172, 238);
-    font-weight: bold;
+    text-decoration: none;
+    margin-right: 15px;
 }
 #delete-btn {
-    background: rgb(255, 155, 155);
-    font-weight: bold;
+    text-decoration: none;
+    color: #243447;
+    font-size: 23px;
 }
 th {
-    background: rgb(61, 60, 44);
+    background: #454345;
     text-align: center;
     color:white;
 }
