@@ -5,16 +5,16 @@
             <h3 id="heading" class="vue-title">Post Trucks</h3>
 
             <a href="" @click = "randomInput" id="play-btn">
-                <img src="./play.png" height="45" width="45"/>
+                <img src="./img/play.png" height="45" width="45"/>
             </a>
 
             <a href="" @click = "addTruck" id="new-btn">
-                <img id="img" src="./add.png" height="32" width="32"/>
+                <img id="img" src="./img/add.png" height="32" width="32"/>
             New
             </a>
 
              <a href="" @click = "eraseTable" id="delete-btn">
-                <img src="./delete.png" height="32" width="32"/>
+                <img src="./img/delete.png" height="32" width="32"/>
             Delete All
             </a>
 
