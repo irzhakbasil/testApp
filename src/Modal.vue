@@ -2,7 +2,7 @@
  <div class="container">
     <h3>New Truck Info</h3>
     <div v-for="(value, key, index) in fields" :key='fields[index]'>
-        <input v-model = 'fields[key]' placeholder = 'key'>
+        <input v-model = 'fields[key]' :placeholder = key>
     </div>
     <div>
         <button id='btn' @click = "update">SAVE</button>
@@ -15,7 +15,7 @@
  import tableHeadings from './tableHeadings'
  export default {
      data: function() {
-        let fields = Object.assign({}, tableHeadings);
+        let fields = Object.assign({}, dataObj);
         return {
             fields: fields
         }
