@@ -21,9 +21,9 @@
 
 <script>
     import Modal from './Modal'
-    import dataObj from './dataObj'
-    import tableHeadings from './tableHeadings'
-    import words from './words'
+    import dataObj from './data/dataObj'
+    import tableHeadings from './data/tableHeadings'
+    import words from './data/words'
 
     let tableData = [];
     let getData = () => tableData;

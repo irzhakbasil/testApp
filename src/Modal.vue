@@ -11,8 +11,8 @@
  </template>
 
  <script>
- import dataObj from './dataObj'
- import tableHeadings from './tableHeadings'
+ import dataObj from './data/dataObj'
+ import tableHeadings from './data/tableHeadings'
  export default {
      data: function() {
         let fields = Object.assign({}, dataObj);
