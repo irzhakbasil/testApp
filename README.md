@@ -1,4 +1,8 @@
 
+# You can change the table and inputs by simply replacing the objects in dataObj.js and tableHeadings.js 
+# Not solved the issue with prepopulated input fields (in hardcoded version it works fine). 
+# better css needed :D
+
 # vue-cli
 
 > A Vue.js project
