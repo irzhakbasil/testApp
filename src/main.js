@@ -6,6 +6,8 @@ import VModal from 'vue-js-modal'
 Vue.use(VModal, { dynamic: true, injectModalsContainer: true });
 Vue.use(VueTables.ClientTable);
 
+export const eventBus = new Vue();
+
 new Vue({
   el: '#app',
   render: h => h(App)

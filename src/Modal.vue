@@ -1,64 +1,24 @@
 <template>
  <div class="container">
     <h3>New Truck Info</h3>
-    <div>
-        <input v-model = 'callControl' placeholder="Call Control">
+    <div v-for="(value, key, index) in fields" :key='fields[index]'>
+        <input v-model = 'fields[key]' placeholder = 'key'>
     </div>
     <div>
-        <input v-model = 'read' placeholder="Read">
+        <button id='btn' @click = "update">SAVE</button>
     </div>
-    <div>
-        <input v-model = 'soundAutoCall' placeholder="Sound Auto Call">
-    </div>
-    <div>
-        <input v-model = 'truck' placeholder="Truck">
-    </div>
-    <div>
-        <input v-model = 'origin' placeholder="Origin"> 
-    </div>
-    <div>  
-        <input v-model = 'destination' placeholder="Destination">
-    </div>
-    <div>
-        <input v-model = 'pickup' placeholder="Pickup">
-    </div>
-    <div>
-        <input v-model = 'dho' placeholder="DH-O">    
-    </div>
-    <div>
-        <input v-model = 'dhd' placeholder="DH-D">    
-    </div>
-    <div>
-        <input v-model = 'fp' placeholder="FP">    
-    </div>
-    <div>
-        <input v-model = 'length' placeholder="Length">
-    </div>
-    <div>
-        <input v-model = 'weight' placeholder="Weight">
-    </div>
-    <div>
-        <input v-model = 'trip' placeholder="Trip">
-    </div>
-    <div>
-        <input v-model = 'alarm' placeholder="Alarm">
-    </div>
-    <div>
-        <input v-model = 'actions' placeholder="Actions">
-    </div>
-    <button id='btn' @click = "update">SAVE</button>
     </div>
  </template>
 
  <script>
-
  import dataObj from './dataObj'
  import tableHeadings from './tableHeadings'
-
  export default {
      data: function() {
-        let data = Object.assign({}, dataObj);
-        return data;
+        let fields = Object.assign({}, tableHeadings);
+        return {
+            fields: fields
+        }
     },
      props: ['saveTruck'],
      methods: {
@@ -66,12 +26,10 @@
             let tempObj = Object.assign({}, dataObj)
         
                 for (let i in tempObj) {
-                    tempObj[i] = this[i];
+                    tempObj[i] = this.fields[i];
                 }
-
             return tempObj;
      },
-
      update() {
          let newData = this.save();
          if (this.littleCheck(newData)){
@@ -79,7 +37,6 @@
              this.$emit('close');
          } else this.$emit('close');
      },
-
      littleCheck(obj) {
          let check = 0;
          for (let key in obj) {
@@ -96,6 +53,5 @@
         margin-top: 5px;
     }
  </style>
- 
 
  
