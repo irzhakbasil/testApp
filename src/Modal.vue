@@ -59,18 +59,21 @@
     #btn {
         margin-top: 5px;
         margin-bottom: 10px;
+        font-family: 'Mitr', sans-serif;
     }
     #input-div {
         padding-bottom: 3px;
     }
     input {
-        text-indent: 10px
+        text-indent: 7px;
+        font-family: 'Mitr', sans-serif;
     }
     .container {
         background-color: #c6dbec;
     }
     h3 {
-        font-size: 22px;
+        font-size: 19px;
         color: #243447;
+        font-family: 'Mitr', sans-serif;
     }
  </style>

@@ -64,7 +64,7 @@
                 }
             },{
                 height: 'auto',
-                width: '205px',
+                width: '211px',
             });
           },
           eraseTable(e) {
@@ -124,5 +124,10 @@ th {
 }
 .nav-container {
     margin-left: 50px;
+}
+td {
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Mitr', sans-serif;
 }
 </style>
