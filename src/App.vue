@@ -76,8 +76,7 @@
               e.preventDefault() 
               let tmpObj = Object.assign({}, dataObj);
               for(let i in tmpObj) {
-                  let word = words[Math.floor(Math.random() * words.length)]
-                  tmpObj[i] = word;
+                  tmpObj[i] = words[Math.floor(Math.random() * words.length)]
               }
                tableData.push(tmpObj);
           }
