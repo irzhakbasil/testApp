@@ -63,7 +63,7 @@
                     tableData.push(newTruck);
                 }
             },{
-                height: '500px',
+                height: 'auto',
                 width: '205px',
             });
           },
