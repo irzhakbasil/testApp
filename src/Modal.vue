@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h3>New Truck Info</h3>
+        <h3>- New Truck Info - </h3>
             <div id="input-div" v-for="(value, key, index) in fields" :key='fields[index]'>
                 <input v-model = 'fields[key]' :placeholder = key>
             </div>
@@ -70,6 +70,7 @@
         background-color: #c6dbec;
     }
     h3 {
+        font-size: 22px;
         color: #243447;
     }
  </style>
