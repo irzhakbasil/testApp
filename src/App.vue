@@ -4,16 +4,16 @@
 
             <h3 id="heading" class="vue-title">Post Trucks</h3>
 
-            <a href="" @click = "randomInput" id="play-btn">
+            <a href="" @click.prevent = "randomInput" id="play-btn">
                 <img src="./img/play.png" height="45" width="45"/>
             </a>
 
-            <a href="" @click = "addTruck" id="new-btn">
+            <a href="" @click.prevent = "addTruck" id="new-btn">
                 <img id="img" src="./img/add.png" height="32" width="32"/>
             New
             </a>
 
-             <a href="" @click = "eraseTable" id="delete-btn">
+             <a href="" @click.prevent = "eraseTable" id="delete-btn">
                 <img src="./img/delete.png" height="32" width="32"/>
             Delete All
             </a>
@@ -56,8 +56,7 @@
           Modal
       },
       methods: {
-          addTruck(e) {
-            e.preventDefault()
+          addTruck() {
             this.$modal.show(Modal, {
                 saveTruck(newTruck) {
                     tableData.push(newTruck);
@@ -67,13 +66,11 @@
                 width: '211px',
             });
           },
-          eraseTable(e) {
-              e.preventDefault()
+          eraseTable() {
               tableData = [];
               this.data = getData();
           },
-          randomInput(e){
-              e.preventDefault() 
+          randomInput(){
               let tmpObj = Object.assign({}, dataObj);
               for(let i in tmpObj) {
                   tmpObj[i] = words[Math.floor(Math.random() * words.length)]
@@ -131,3 +128,4 @@ td {
     font-family: 'Mitr', sans-serif;
 }
 </style>
+
